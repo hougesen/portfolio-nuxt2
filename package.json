@@ -1,0 +1,46 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "author": {
+    "name": "Mads Hougesen",
+    "url": "https://mhouge.dk/",
+    "email": "mads@mhouge.dk"
+  },
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext \".js,.ts,.vue\" --ignore-path .gitignore .",
+    "prettier": "npx prettier --write .",
+    "pre-commit": "npm run prettier && npm run lint"
+  },
+  "dependencies": {
+    "@nuxt/content": "^1.14.0",
+    "@nuxtjs/sitemap": "^2.4.0",
+    "core-js": "^3.15.1",
+    "nuxt": "^2.15.7"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.14.7",
+    "@nuxt/types": "^2.15.7",
+    "@nuxt/typescript-build": "^2.1.0",
+    "@nuxtjs/eslint-config-typescript": "^6.0.1",
+    "@nuxtjs/eslint-module": "^3.0.2",
+    "@nuxtjs/google-analytics": "^2.4.0",
+    "eslint": "^7.29.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-nuxt": "^2.0.0",
+    "eslint-plugin-vue": "^7.12.1",
+    "fibers": "^5.0.0",
+    "graphql": "^15.5.1",
+    "nuxt-graphql-request": "^4.0.1",
+    "prettier": "^2.3.2",
+    "sass": "^1.35.2",
+    "sass-loader": "^10.1.1"
+  },
+  "browserslist": [
+    "defaults"
+  ]
+}
