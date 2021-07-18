@@ -4,7 +4,7 @@ Portfolio with Github integration to fetch pinned repositories.
 
 Currently using this as my own portfolio, which can be seen at [mhouge.dk](https://mhouge.dk).
 
-Feel free to use it as a template if you wish. 
+Feel free to use it as a template if you wish.
 
 ## Build Setup
 
