@@ -32,12 +32,16 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
+
       - name: Install dependencies 👨🏻‍💻
         run: npm ci
+
+      - name: Update browserslist 🌐
+        run: npx browserslist@latest --update-db
 
       - name: Run linter 👀
         run: npm run pre-commit
 
       - uses: EndBug/add-and-commit@v7
         with:
-          message: 'Automatic formatting + linting from ci.yml'
+          message: 'Code quality fixes from code-quality.yml'
