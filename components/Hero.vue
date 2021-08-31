@@ -7,38 +7,46 @@
             srcset="@/assets/images/personal/cirkelbillede1.webp"
             type="image/webp"
           />
+
           <source
             srcset="@/assets/images/personal/cirkelbillede1.png"
             type="image/png"
           />
+
           <img
             src="@/assets/images/personal/cirkelbillede1.png"
             alt="Billede af mig - Mads Hougesen"
           />
         </picture>
       </div>
+
       <div class="hero-grid-item hero-grid-text">
         <h1 class="section-titel">
           <span @mouseover="changeHighlightColor">Hi,</span> I'm Mads
         </h1>
+
         <p class="hero-description">
           Frontend developer living in Odense, Denmark. Lover of all things
           JavaScript - but I am always learning new stuff.
         </p>
+
         <div class="hero-icons">
           <SocialIcons />
         </div>
       </div>
+
       <div class="hero-grid-item hero-image hero-image-desktop">
         <picture>
           <source
             srcset="@/assets/images/personal/cirkelbillede1.webp"
             type="image/webp"
           />
+
           <source
             srcset="@/assets/images/personal/cirkelbillede1.png"
             type="image/png"
           />
+
           <img
             src="@/assets/images/personal/cirkelbillede1.png"
             alt="Billede af mig - Mads Hougesen"
@@ -50,15 +58,17 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import Vue from 'vue';
+
 export default Vue.extend({
   name: 'Hero',
+
   methods: {
     changeHighlightColor() {
-      this.$emit('changeHighlight')
+      this.$emit('changeHighlight');
     },
   },
-})
+});
 </script>
 
 <style lang="scss" scoped>
@@ -76,17 +86,21 @@ $tabletBreakpoint: 1367px;
   .hero-grid-item {
     width: 100%;
   }
+
   .hero-grid-text {
     margin: auto;
+
     .section-titel {
       margin-bottom: 0;
     }
+
     a {
       color: var(--black);
     }
 
     p {
       font-size: 1.1rem;
+
       @media screen and (min-width: $tabletBreakpoint) {
         font-size: 1.5rem;
       }
@@ -110,15 +124,16 @@ $tabletBreakpoint: 1367px;
     margin: auto;
     text-align: center;
     margin-bottom: 1rem;
+
     img {
       width: 100%;
-    }
-    @media screen and (min-width: $mobileBreakpoint) {
-      img {
+
+      @media screen and (min-width: $mobileBreakpoint) {
         width: 70%;
         max-width: 350px;
       }
     }
+
     @media screen and (max-width: $tabletBreakpoint) {
       display: block;
     }

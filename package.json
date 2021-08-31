@@ -13,8 +13,9 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext \".js,.ts,.vue\" --ignore-path .gitignore .",
-    "prettier": "npx prettier --write .",
-    "pre-commit": "npm run prettier && npm run lint"
+    "lint-fix": "eslint --fix --ext \".js,.ts,.vue\" --ignore-path .gitignore .",
+    "format": "prettier --write .",
+    "format-lint-fix": "npm run format && npm run lint-fix"
   },
   "dependencies": {
     "@nuxt/content": "^1.14.0",

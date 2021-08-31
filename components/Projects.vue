@@ -36,11 +36,12 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-import { gql } from 'graphql-request'
+import Vue from 'vue';
+import { gql } from 'graphql-request';
 
 export default Vue.extend({
   name: 'Projects',
+
   data() {
     return {
       projects: [
@@ -61,29 +62,13 @@ export default Vue.extend({
           },
           homepageUrl: 'https://stron.gr/',
         },
-        {
-          name: 'Hayat Plakater',
-          description: 'Webshop made using Nuxt.js and Strapi. ',
-          languages: {
-            nodes: [
-              {
-                color: '#41b883',
-                name: 'Vue',
-              },
-              {
-                color: '#f1e05a',
-                name: 'JavaScript',
-              },
-            ],
-          },
-          homepageUrl: 'https://hayatplakater.dk/',
-        },
       ],
-    }
+    };
   },
   created() {
-    this.fetchProjects()
+    this.fetchProjects();
   },
+
   methods: {
     async fetchProjects() {
       const query = gql`
@@ -110,14 +95,14 @@ export default Vue.extend({
             }
           }
         }
-      `
+      `;
 
-      const projects = await this.$graphql.default.request(query)
+      const projects = await this.$graphql.default.request(query);
 
-      this.projects = this.projects.concat(projects.user.pinnedItems.nodes)
+      this.projects = this.projects.concat(projects.user.pinnedItems.nodes);
     },
   },
-})
+});
 </script>
 
 <style lang="scss" scoped>
@@ -128,6 +113,7 @@ $tabletBreakpoint: 1367px;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-gap: 2rem;
+
   @media screen and (min-width: $tabletBreakpoint) {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -136,7 +122,6 @@ $tabletBreakpoint: 1367px;
 .project {
   width: 100%;
   color: var(--black);
-
   background-color: #fff;
   padding: 1rem;
   display: flex;
@@ -158,6 +143,7 @@ $tabletBreakpoint: 1367px;
           text-decoration: none;
         }
       }
+
       .project-links {
         margin-left: auto;
         a {
@@ -172,10 +158,12 @@ $tabletBreakpoint: 1367px;
     .project-description {
       margin-bottom: 0.5rem;
     }
+
     .project-tags {
       display: flex;
       position: absolute;
       bottom: 1rem;
+
       p {
         font-size: 0.8rem;
         color: white;

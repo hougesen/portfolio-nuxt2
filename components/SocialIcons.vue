@@ -7,14 +7,16 @@
       rel="noreferrer noopener"
       target="_blank"
     >
-      <i :class="icon.class"></i>
+      <i :class="icon.class" />
     </a>
   </div>
 </template>
+
 <script lang="ts">
-import Vue from 'vue'
+import Vue from 'vue';
 export default Vue.extend({
   name: 'SocialIcons',
+
   data() {
     return {
       icons: [
@@ -31,9 +33,9 @@ export default Vue.extend({
           class: 'fab fa-behance-square fa-3x',
         },
       ],
-    }
+    };
   },
-})
+});
 </script>
 
 <style lang="scss" scoped>

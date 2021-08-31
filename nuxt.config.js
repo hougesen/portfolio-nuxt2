@@ -3,9 +3,11 @@ export default {
 
   head: {
     title: 'Mads Hougesen | Software Developer',
+
     htmlAttrs: {
       lang: 'en',
     },
+
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -28,6 +30,7 @@ export default {
       },
       { name: 'format-detection', content: 'telephone=no' },
     ],
+
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
@@ -41,8 +44,10 @@ export default {
     clients: {
       default: {
         endpoint: 'https://api.github.com/graphql',
+
         options: {
           headers: {
+            // Remember to set your own github token if you forked this project
             authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
           },
         },
@@ -67,6 +72,7 @@ export default {
   },
 
   googleAnalytics: {
+    // Remember to set your own google analytics ua id if you forked this project
     id: 'UA-45233401-2',
   },
 
@@ -82,4 +88,4 @@ export default {
   content: {},
 
   build: {},
-}
+};

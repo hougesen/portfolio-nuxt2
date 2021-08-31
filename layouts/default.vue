@@ -1,19 +1,22 @@
 <template>
   <div>
     <Nav />
+
     <Nuxt />
   </div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-export default Vue.extend({})
+import Vue from 'vue';
+
+export default Vue.extend({});
 </script>
 
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;700&display=swap');
 $mobileBreakpoint: 600px;
 $tabletBreakpoint: 1367px;
+
 :root {
   --black: #101010;
   --highlight-color: #ff142e;
@@ -64,6 +67,7 @@ h5 {
   background-repeat: no-repeat;
   background-position: top;
 }
+
 h1 {
   font-size: clamp(1rem, -0.875rem + 8.333vw, 3.5rem); //3.5rem;
   margin-bottom: 1rem;
