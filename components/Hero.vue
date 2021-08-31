@@ -1,7 +1,7 @@
 <template>
   <section class="default-width">
     <div class="hero-grid">
-      <div class="hero-grid-item hero-image hero-image-mobile">
+      <div class="hero-grid-item hero-image hero-image--mobile">
         <picture>
           <source
             srcset="@/assets/images/personal/cirkelbillede1.webp"
@@ -21,21 +21,30 @@
       </div>
 
       <div class="hero-grid-item hero-grid-text">
-        <h1 class="section-titel">
-          <span @mouseover="changeHighlightColor">Hi,</span> I'm Mads
+        <h1 class="section-title">
+          <span class="highlight-color" @mouseover="changeHighlightColor">
+            Hi,
+          </span>
+          I'm Mads
         </h1>
 
-        <p class="hero-description">
-          Frontend developer living in Odense, Denmark. Lover of all things
-          JavaScript - but I am always learning new stuff.
+        <p>
+          I am a software developer from Denmark. Lover of all things
+          programming, so I am always learning new technologies.
         </p>
 
-        <div class="hero-icons">
-          <SocialIcons />
-        </div>
+        <p>
+          I currently work @
+          <a href="https://cavea.io" rel="noreferrer noopener" target="_blank"
+            >cavea.io</a
+          >
+          while studying for my bachelor's degree in web development.
+        </p>
+
+        <SocialIcons class="hero-icons" />
       </div>
 
-      <div class="hero-grid-item hero-image hero-image-desktop">
+      <div class="hero-grid-item hero-image hero-image--desktop">
         <picture>
           <source
             srcset="@/assets/images/personal/cirkelbillede1.webp"
@@ -49,7 +58,7 @@
 
           <img
             src="@/assets/images/personal/cirkelbillede1.png"
-            alt="Billede af mig - Mads Hougesen"
+            alt="Image of me - Mads Hougesen"
           />
         </picture>
       </div>
@@ -64,7 +73,11 @@ export default Vue.extend({
   name: 'Hero',
 
   methods: {
-    changeHighlightColor() {
+    /**
+     * @summary emit to parent to change highlight color
+     * @emits {Event}
+     */
+    changeHighlightColor(): void {
       this.$emit('changeHighlight');
     },
   },
@@ -79,10 +92,6 @@ $tabletBreakpoint: 1367px;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
 
-  @media screen and (min-width: $tabletBreakpoint) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .hero-grid-item {
     width: 100%;
   }
@@ -90,12 +99,8 @@ $tabletBreakpoint: 1367px;
   .hero-grid-text {
     margin: auto;
 
-    .section-titel {
+    .section-title {
       margin-bottom: 0;
-    }
-
-    a {
-      color: var(--black);
     }
 
     p {
@@ -105,10 +110,10 @@ $tabletBreakpoint: 1367px;
         font-size: 1.5rem;
       }
     }
-  }
 
-  .hero-icons {
-    margin-top: 1rem;
+    .hero-icons {
+      margin-top: 1rem;
+    }
   }
 
   .hero-image {
@@ -117,33 +122,38 @@ $tabletBreakpoint: 1367px;
     margin-bottom: auto;
     text-align: right;
     width: 70%;
-  }
 
-  .hero-image-mobile {
-    display: none;
-    margin: auto;
-    text-align: center;
-    margin-bottom: 1rem;
+    &--desktop {
+      display: block;
 
-    img {
-      width: 100%;
-
-      @media screen and (min-width: $mobileBreakpoint) {
-        width: 70%;
-        max-width: 350px;
+      @media screen and (max-width: $tabletBreakpoint) {
+        display: none;
       }
     }
 
-    @media screen and (max-width: $tabletBreakpoint) {
-      display: block;
+    &--mobile {
+      display: none;
+      margin: auto;
+      text-align: center;
+      margin-bottom: 1rem;
+
+      img {
+        width: 100%;
+
+        @media screen and (min-width: $mobileBreakpoint) {
+          width: 70%;
+          max-width: 350px;
+        }
+      }
+
+      @media screen and (max-width: $tabletBreakpoint) {
+        display: block;
+      }
     }
   }
-  .hero-image-desktop {
-    display: block;
 
-    @media screen and (max-width: $tabletBreakpoint) {
-      display: none;
-    }
+  @media screen and (min-width: $tabletBreakpoint) {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 </style>

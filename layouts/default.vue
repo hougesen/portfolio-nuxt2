@@ -13,7 +13,6 @@ export default Vue.extend({});
 </script>
 
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;700&display=swap');
 $mobileBreakpoint: 600px;
 $tabletBreakpoint: 1367px;
 
@@ -29,23 +28,21 @@ $tabletBreakpoint: 1367px;
   box-sizing: border-box;
   transition: 0.4s;
   line-height: 1.6;
-}
+  color: var(--black);
 
-*:before,
-*:after {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  line-height: 1.6;
-}
-
-html {
-  scroll-behavior: smooth;
+  &::before,
+  &::after {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    line-height: 1.6;
+  }
 }
 
 body,
 html {
+  scroll-behavior: smooth;
   font-family: 'Open Sans', sans-serif;
   height: 100%;
   padding-top: 0;
@@ -69,7 +66,7 @@ h5 {
 }
 
 h1 {
-  font-size: clamp(1rem, -0.875rem + 8.333vw, 3.5rem); //3.5rem;
+  font-size: clamp(1rem, -0.875rem + 8.333vw, 3.5rem);
   margin-bottom: 1rem;
   text-transform: uppercase;
 
@@ -95,5 +92,9 @@ h2 {
   @media screen and (min-width: $tabletBreakpoint) {
     margin: 0 10% 5rem 10%;
   }
+}
+
+.highlight-color {
+  color: var(--highlight-color);
 }
 </style>

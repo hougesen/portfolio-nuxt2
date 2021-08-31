@@ -1,6 +1,6 @@
 <template>
   <section id="skills" class="default-width">
-    <h1 class="section-titel">Skillset</h1>
+    <h1 class="section-title">Skillset</h1>
     <div class="skills-grid">
       <div class="skills-item">
         <Icons icon="development" />
@@ -42,7 +42,11 @@ export default Vue.extend({
   name: 'Skills',
 
   methods: {
-    changeHighlightColor() {
+    /**
+     * @summary emit to parent to change highlight color
+     * @emits {Event}
+     */
+    changeHighlightColor(): void {
       this.$emit('changeHighlight');
     },
   },
@@ -80,11 +84,8 @@ $tabletBreakpoint: 1367px;
     }
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $mobileBreakpoint) {
     grid-template-columns: repeat(2, 1fr);
   }
-  /* @media screen and (min-width: $tabletBreakpoint) {
-    grid-template-columns: repeat(2, 1fr);
-  } */
 }
 </style>

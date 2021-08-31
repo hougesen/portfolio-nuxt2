@@ -22,16 +22,16 @@ $tabletBreakpoint: 1367px;
   padding-top: 12px;
   margin-bottom: 0.5rem;
 
+  .logo {
+    font-size: 2em;
+    margin-top: 10px;
+    text-decoration: none;
+    filter: invert(1);
+  }
+
   @media screen and (min-width: $tabletBreakpoint) {
     margin-left: 10%;
     margin-right: 10%;
   }
-}
-
-.logo {
-  font-size: 2em;
-  margin-top: 10px;
-  text-decoration: none;
-  filter: invert(1);
 }
 </style>

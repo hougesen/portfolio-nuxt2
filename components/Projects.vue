@@ -1,12 +1,12 @@
 <template>
   <section id="projects" class="default-width">
-    <h1 class="section-titel">Projects</h1>
+    <h1 class="section-title">Projects</h1>
 
     <div class="project-grid">
       <div v-for="(project, index) in projects" :key="index" class="project">
         <div class="project-text">
           <div class="project-header">
-            <h2 class="project-titel">
+            <h2 class="project-title">
               <a
                 :href="project.url || project.homepageUrl"
                 target="_blank"
@@ -47,7 +47,8 @@ export default Vue.extend({
       projects: [
         {
           name: 'Strongr',
-          description: 'Fitness tracker PWA made using Vue.js/Express/MySQL. ',
+          description:
+            'Fitness tracker web app made using Nuxt (TypeScript), Node/Express & MongoDB. ',
           languages: {
             nodes: [
               {
@@ -65,12 +66,16 @@ export default Vue.extend({
       ],
     };
   },
+
   created() {
     this.fetchProjects();
   },
 
   methods: {
-    async fetchProjects() {
+    /**
+     * @summary fetch first 6 pinned repositories from Github
+     */
+    async fetchProjects(): Promise<void> {
       const query = gql`
         query GET_PROJECTS {
           user(login: "Hougesen") {
@@ -117,59 +122,49 @@ $tabletBreakpoint: 1367px;
   @media screen and (min-width: $tabletBreakpoint) {
     grid-template-columns: repeat(3, 1fr);
   }
-}
 
-.project {
-  width: 100%;
-  color: var(--black);
-  background-color: #fff;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid #101010;
-  position: relative;
-  padding-bottom: 3rem;
+  .project {
+    width: 100%;
+    background-color: #fff;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #101010;
+    position: relative;
+    padding-bottom: 3rem;
 
-  .project-text {
-    .project-header {
-      display: flex;
+    .project-text {
+      .project-header {
+        display: flex;
 
-      .project-titel {
-        font-size: 1.25rem;
-        font-weight: 600;
-        margin-bottom: 0.25rem;
-        a {
-          color: var(--black);
-          text-decoration: none;
-        }
-      }
+        .project-title {
+          font-size: 1.25rem;
+          font-weight: 600;
+          margin-bottom: 0.25rem;
+          text-transform: lowercase;
 
-      .project-links {
-        margin-left: auto;
-        a {
-          color: var(--black);
-          &:hover {
-            color: var(--highlight-color);
+          a {
+            text-decoration: none;
           }
         }
       }
-    }
 
-    .project-description {
-      margin-bottom: 0.5rem;
-    }
+      .project-description {
+        margin-bottom: 0.5rem;
+      }
 
-    .project-tags {
-      display: flex;
-      position: absolute;
-      bottom: 1rem;
+      .project-tags {
+        display: flex;
+        position: absolute;
+        bottom: 1rem;
 
-      p {
-        font-size: 0.8rem;
-        color: white;
-        margin-right: 0.5rem;
-        padding: 0.25rem 0.5rem;
-        border-radius: 2px;
+        .project-tag {
+          font-size: 0.8rem;
+          color: white;
+          margin-right: 0.5rem;
+          padding: 0.25rem 0.5rem;
+          border-radius: 2px;
+        }
       }
     }
   }

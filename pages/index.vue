@@ -14,12 +14,11 @@
 import Vue from 'vue';
 
 export default Vue.extend({
-  beforeMount() {
-    this.randomHighlightColor();
-  },
-
   methods: {
-    randomHighlightColor() {
+    /**
+     * @summary generate a random color and set the css root variable "--highlight-color" as the color
+     */
+    randomHighlightColor(): void {
       const root = document.documentElement;
       const min = 70;
       const max = 360;

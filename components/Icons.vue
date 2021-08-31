@@ -98,6 +98,7 @@ export default Vue.extend({
 <style lang="scss" scoped>
 svg {
   fill: var(--black);
+
   path: {
     fill: inherit;
   }

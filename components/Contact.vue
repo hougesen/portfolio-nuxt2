@@ -2,15 +2,13 @@
   <section id="contact" class="default-width">
     <div class="contact-grid">
       <div class="contact-text">
-        <h1 class="section-titel contact-titel">Wanna get in touch?</h1>
+        <h1 class="section-title contact-title">Wanna get in touch?</h1>
 
-        <p class="subheading">
-          I am always down to collaborate, you can contact me here
-        </p>
+        <p class="subheading">I am always available for exciting discussions</p>
 
         <div class="contact-icon">
           <span>
-            <i class="far fa-envelope fa-fw"></i>
+            <i class="far fa-envelope fa-fw" title="email icon" />
 
             <a href="mailto:mads@mhouge.dk">mads@mhouge.dk</a>
           </span>
@@ -18,13 +16,12 @@
 
         <div class="contact-icon">
           <span>
-            <i class="fas fa-map-marker-alt fa-fw"> </i>Odense, Danmark
+            <i class="fas fa-map-marker-alt fa-fw" title="location icon" />
+            Odense, Danmark
           </span>
         </div>
 
-        <br />
-
-        <SocialIcons />
+        <SocialIcons class="social-icons" />
       </div>
 
       <div class="email-icon">
@@ -54,44 +51,44 @@ $tabletBreakpoint: 1367px;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
 
-  @media screen and (min-width: $tabletBreakpoint) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+  .contact-text {
+    margin-top: auto;
+    margin-bottom: auto;
 
-.contact-titel {
-  margin-bottom: 0;
-}
+    .contact-title {
+      margin-bottom: 0;
+    }
 
-.contact-icon {
-  margin-top: 1%;
+    .contact-icon {
+      margin-top: 1%;
 
-  a {
-    color: var(--black);
+      a {
+        color: var(--black);
+      }
 
-    &:hover {
-      color: var(--highlight-color);
+      span {
+        display: inline-block;
+        font-size: 1.2rem;
+      }
+    }
+
+    .social-icons {
+      margin-top: 1rem;
     }
   }
 
-  span {
-    display: inline-block;
-    font-size: 1.2rem;
-  }
-}
+  .email-icon {
+    margin-left: auto;
+    display: none;
 
-.email-icon {
-  margin: auto;
-  display: none;
+    @media screen and (min-width: $tabletBreakpoint) {
+      grid-template-columns: repeat(2, 1fr);
+      display: block;
+    }
+  }
 
   @media screen and (min-width: $tabletBreakpoint) {
     grid-template-columns: repeat(2, 1fr);
-    display: block;
   }
-}
-
-.contact-text {
-  margin-top: auto;
-  margin-bottom: auto;
 }
 </style>

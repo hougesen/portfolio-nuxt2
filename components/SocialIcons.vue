@@ -7,13 +7,14 @@
       rel="noreferrer noopener"
       target="_blank"
     >
-      <i :class="icon.class" />
+      <i :class="icon.class" :title="icon.href" />
     </a>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
+
 export default Vue.extend({
   name: 'SocialIcons',
 
