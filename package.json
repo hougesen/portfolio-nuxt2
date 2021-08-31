@@ -31,11 +31,6 @@
     "format": "prettier --write .",
     "pre-commit": "npm run lint-fix && npm run format"
   },
-  "lint-staged": {
-    "*.{js,ts,vue,css,scss,json,md}": "prettier --write",
-    "*.{js,ts,vue}": "eslint --fix",
-    "*.{css,scss,vue}": "stylelint --fix"
-  },
   "dependencies": {
     "@nuxt/content": "^1.14.0",
     "@nuxtjs/dotenv": "^1.4.1",
@@ -66,9 +61,6 @@
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^22.0.0"
   },
-  "browserslist": [
-    "defaults"
-  ],
   "keywords": [
     "portfolio",
     "portfolio-vue"
