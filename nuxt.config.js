@@ -67,7 +67,7 @@ export default {
         options: {
           headers: {
             // Remember to set your own github token if you forked this project
-            authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+            authorization: `Bearer ${process.env.PERSONAL_ACCESS_TOKEN_GITHUB}`,
           },
         },
       },
