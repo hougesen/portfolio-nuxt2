@@ -1,4 +1,4 @@
-name: ci
+name: code-quality
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
       - master
 
 jobs:
-  ci:
+  code-quality:
     runs-on: ${{ matrix.os }}
 
     strategy:
