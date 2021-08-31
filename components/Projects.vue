@@ -37,7 +37,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import { gql } from 'graphql-request';
+import axios from 'axios';
 
 export default Vue.extend({
   name: 'Projects',
@@ -76,35 +76,16 @@ export default Vue.extend({
      * @summary fetch first 6 pinned repositories from Github
      */
     async fetchProjects(): Promise<void> {
-      const query = gql`
-        query GET_PROJECTS {
-          user(login: "Hougesen") {
-            pinnedItems(first: 6) {
-              nodes {
-                ... on Repository {
-                  name
-                  languages(
-                    first: 3
-                    orderBy: { field: SIZE, direction: DESC }
-                  ) {
-                    nodes {
-                      color
-                      name
-                    }
-                  }
-                  description
-                  homepageUrl
-                  url
-                }
-              }
-            }
-          }
-        }
-      `;
+      if (
+        process.env.FETCH_PINNED_LAMBDA_URL &&
+        typeof process.env.FETCH_PINNED_LAMBDA_URL === 'string'
+      ) {
+        const projects: [] = await axios
+          .get(process.env.FETCH_PINNED_LAMBDA_URL)
+          .then((res) => res.data);
 
-      const projects = await this.$graphql.default.request(query);
-
-      this.projects = this.projects.concat(projects.user.pinnedItems.nodes);
+        this.projects = this.projects.concat(projects);
+      }
     },
   },
 });

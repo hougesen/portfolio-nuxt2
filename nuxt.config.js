@@ -41,12 +41,10 @@ export default {
         rel: 'stylesheet',
         href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css',
       },
-
       {
         rel: 'preconnect',
         href: 'https://fonts.googleapis.com',
       },
-
       {
         rel: 'preconnect',
         crossorigin: '',
@@ -57,22 +55,6 @@ export default {
         href: 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400&display=swap',
       },
     ],
-  },
-
-  graphql: {
-    clients: {
-      default: {
-        endpoint: 'https://api.github.com/graphql',
-
-        options: {
-          headers: {
-            // Remember to set your own github token if you forked this project
-            authorization: `Bearer ${process.env.PERSONAL_ACCESS_TOKEN_GITHUB}`,
-          },
-        },
-      },
-    },
-    options: {},
   },
 
   components: true,
@@ -98,7 +80,6 @@ export default {
   buildModules: [
     '@nuxt/typescript-build',
     '@nuxtjs/dotenv',
-    'nuxt-graphql-request',
     '@nuxtjs/stylelint-module',
     '@nuxtjs/google-analytics',
   ],

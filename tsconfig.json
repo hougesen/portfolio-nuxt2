@@ -15,12 +15,7 @@
       "~/*": ["./*"],
       "@/*": ["./*"]
     },
-    "types": [
-      "@nuxt/types",
-      "@nuxt/content",
-      "@types/node",
-      "nuxt-graphql-request"
-    ]
+    "types": ["@nuxt/types", "@nuxt/content", "@types/node"]
   },
   "exclude": ["node_modules", ".nuxt", "dist"]
 }

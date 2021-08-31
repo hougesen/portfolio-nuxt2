@@ -1,0 +1,12 @@
+{
+  "name": "aws-labmda-fetch-pinned",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
+}
