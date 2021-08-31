@@ -1,5 +1,3 @@
-const GITHUB_TOKEN = ''
-
 export default {
   target: 'static',
 
@@ -45,7 +43,7 @@ export default {
         endpoint: 'https://api.github.com/graphql',
         options: {
           headers: {
-            authorization: `Bearer ${GITHUB_TOKEN}`,
+            authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
           },
         },
       },
@@ -74,6 +72,7 @@ export default {
 
   buildModules: [
     '@nuxt/typescript-build',
+    '@nuxtjs/dotenv',
     'nuxt-graphql-request',
     '@nuxtjs/google-analytics',
   ],
