@@ -80,6 +80,7 @@ export default {
     '@nuxt/typescript-build',
     '@nuxtjs/dotenv',
     'nuxt-graphql-request',
+    '@nuxtjs/stylelint-module',
     '@nuxtjs/google-analytics',
   ],
 
