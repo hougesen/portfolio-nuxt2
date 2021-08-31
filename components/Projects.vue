@@ -76,16 +76,13 @@ export default Vue.extend({
      * @summary fetch first 6 pinned repositories from Github
      */
     async fetchProjects(): Promise<void> {
-      if (
-        process.env.FETCH_PINNED_LAMBDA_URL &&
-        typeof process.env.FETCH_PINNED_LAMBDA_URL === 'string'
-      ) {
-        const projects: [] = await axios
-          .get(process.env.FETCH_PINNED_LAMBDA_URL)
-          .then((res) => res.data);
+      // Remember to change to your own api url
+      const URL =
+        'https://8frutdm9cf.execute-api.eu-central-1.amazonaws.com/default/fetchPinnedRepositories';
 
-        this.projects = this.projects.concat(projects);
-      }
+      const projects: [] = await axios.get(URL).then((res) => res.data);
+
+      this.projects = this.projects.concat(projects);
     },
   },
 });

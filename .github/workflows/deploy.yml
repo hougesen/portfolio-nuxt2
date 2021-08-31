@@ -25,8 +25,6 @@ jobs:
 
       - name: Generate
         run: npm run generate
-        env:
-          FETCH_PINNED_LAMBDA_URL: ${{ secrets.FETCH_PINNED_LAMBDA_URL }}
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
