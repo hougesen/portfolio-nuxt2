@@ -10,7 +10,7 @@ Feel free to use it as a template if you wish.
 
 To fetch pinned repositories you have to create a Github personal access token (only public permisssions needed)
 
-I currently have the function to fetch my pinned repositories seperated into an [AWS Lambda function](./aws-lambda-fetch-pinned/README.md)), so I don't have to expose my Github access token. If you don't care about that or wish to call the api from the frontend, then the following query can be used:
+I currently have the function to fetch my pinned repositories seperated into an [AWS Lambda function](./aws-lambda-fetch-pinned/)), so I don't have to expose my Github access token. If you don't care about that or wish to call the api from the frontend, then the following query can be used:
 
 ```js
 const query = gql`
