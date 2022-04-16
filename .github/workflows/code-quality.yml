@@ -3,7 +3,6 @@ name: code-quality
 on:
   push:
     branches:
-      - main
       - master
 
 jobs:
@@ -13,14 +12,14 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node: [14]
+        node: [15]
 
     steps:
       - name: Checkout 🛎
         uses: actions/checkout@master
 
       - name: Setup node env 🏗
-        uses: actions/setup-node@v2.4.0
+        uses: actions/setup-node@v2.1.2
         with:
           node-version: ${{ matrix.node }}
           check-latest: true
@@ -39,8 +38,14 @@ jobs:
       - name: Update browserslist 🌐
         run: npx browserslist@latest --update-db
 
-      - name: Run linter 👀
-        run: npm run pre-commit
+      - name: Run lint:ts-fix 👀
+        run: npm run lint:ts-fix
+
+      - name: Run lint:style-fix
+        run: npm run lint:style-fix
+
+      - name: Run format 💎
+        run: npm run format
 
       - uses: EndBug/add-and-commit@v7
         with:
