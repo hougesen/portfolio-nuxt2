@@ -1,55 +1,52 @@
 <template>
-  <section id="skills" class="default-width">
-    <h1 class="section-title">Skillset</h1>
-    <div class="skills-grid">
-      <div class="skills-item">
-        <Icons icon="development" />
+    <section id="skills" class="default-width">
+        <h1 class="section-title">Skillset</h1>
+        <div class="skills-grid">
+            <div class="skills-item">
+                <Icons icon="development" />
 
-        <h2>
-          Frontend
-          <br />
-          <span @mouseover="changeHighlightColor">&</span> design
-        </h2>
+                <h2>
+                    Frontend
+                    <br />
+                    <span @mouseover="changeHighlightColor">&</span> design
+                </h2>
 
-        <p class="subheading">
-          I enjoy designing UI projects in Adobe Xd. When developing projects I
-          normally use Vue.js & SCSS. I have also played around with Wordpress
-          and Gridsome.
-        </p>
-      </div>
+                <p class="subheading">
+                    I enjoy designing UI projects in Adobe Xd. When developing projects I normally use Vue.js & SCSS. I
+                    have also played around with Wordpress and Gridsome.
+                </p>
+            </div>
 
-      <div class="skills-item">
-        <Icons icon="pen" />
+            <div class="skills-item">
+                <Icons icon="pen" />
 
-        <h2>
-          Backend
-          <br />
-          <span @mouseover="changeHighlightColor">&</span> fullstack
-        </h2>
+                <h2>
+                    Backend
+                    <br />
+                    <span @mouseover="changeHighlightColor">&</span> fullstack
+                </h2>
 
-        <p class="subheading">
-          I have experience in Node.js, Express, PHP, MySQL, MongoDB & Docker.
-        </p>
-      </div>
-    </div>
-  </section>
+                <p class="subheading">I have experience in Node.js, Express, PHP, MySQL, MongoDB & Docker.</p>
+            </div>
+        </div>
+    </section>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
 
 export default Vue.extend({
-  name: 'Skills',
+    name: 'Skills',
 
-  methods: {
-    /**
-     * @summary emit to parent to change highlight color
-     * @emits {Event}
-     */
-    changeHighlightColor(): void {
-      this.$emit('changeHighlight');
+    methods: {
+        /**
+         * @summary emit to parent to change highlight color
+         * @emits {Event}
+         */
+        changeHighlightColor(): void {
+            this.$emit('changeHighlight');
+        },
     },
-  },
 });
 </script>
 
@@ -58,34 +55,34 @@ $mobileBreakpoint: 600px;
 $tabletBreakpoint: 1367px;
 
 .skills-grid {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-gap: 2em;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 2em;
 
-  .skills-item {
-    margin-right: 10%;
+    .skills-item {
+        margin-right: 10%;
+
+        @media screen and (min-width: $mobileBreakpoint) {
+            margin-right: 20%;
+        }
+
+        span {
+            color: var(--highlight-color);
+        }
+
+        .skills-img {
+            display: block;
+            width: 100px;
+            text-align: left;
+
+            @media screen and (min-width: $mobileBreakpoint) {
+                width: 125px;
+            }
+        }
+    }
 
     @media screen and (min-width: $mobileBreakpoint) {
-      margin-right: 20%;
+        grid-template-columns: repeat(2, 1fr);
     }
-
-    span {
-      color: var(--highlight-color);
-    }
-
-    .skills-img {
-      display: block;
-      width: 100px;
-      text-align: left;
-
-      @media screen and (min-width: $mobileBreakpoint) {
-        width: 125px;
-      }
-    }
-  }
-
-  @media screen and (min-width: $mobileBreakpoint) {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 </style>

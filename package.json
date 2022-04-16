@@ -1,68 +1,73 @@
 {
-  "name": "portfolio",
-  "version": "1.0.0",
-  "license": "GPL-3.0",
-  "private": false,
-  "homepage": "https://github.com/Hougesen/portfolio#readme",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Hougesen/portfolio.git"
-  },
-  "author": {
-    "name": "Mads Hougesen",
-    "url": "https://mhouge.dk/",
-    "email": "mads@mhouge.dk"
-  },
-  "bugs": {
-    "url": "https://github.com/Hougesen/portfolio/issues"
-  },
-  "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate",
-    "prepare": "husky install",
-    "lint:ts": "eslint --ext \".js,.ts,.vue\" --ignore-path .gitignore .",
-    "lint:ts-fix": "eslint --fix --ext \".js,.ts,.vue\" --ignore-path .gitignore .",
-    "lint:style": "stylelint \"**/*.{vue,css,scss}\" --ignore-path .gitignore",
-    "lint:style-fix": "stylelint --fix \"**/*.{vue,css,scss}\" --ignore-path .gitignore",
-    "lint-all": "npm run lint:ts && npm run lint:style",
-    "lint-fix": "npm run lint:ts-fix && npm run lint:style-fix",
-    "format": "prettier --write .",
-    "pre-commit": "npm run lint-fix && npm run format"
-  },
-  "dependencies": {
-    "@nuxt/content": "^1.14.0",
-    "@nuxtjs/dotenv": "^1.4.1",
-    "@nuxtjs/sitemap": "^2.4.0",
-    "axios": "^0.21.1",
-    "core-js": "^3.15.1",
-    "nuxt": "^2.15.7"
-  },
-  "devDependencies": {
-    "@babel/eslint-parser": "^7.14.7",
-    "@nuxt/types": "^2.15.7",
-    "@nuxt/typescript-build": "^2.1.0",
-    "@nuxtjs/eslint-config-typescript": "^6.0.1",
-    "@nuxtjs/eslint-module": "^3.0.2",
-    "@nuxtjs/google-analytics": "^2.4.0",
-    "@nuxtjs/stylelint-module": "^4.0.0",
-    "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-nuxt": "^2.0.0",
-    "eslint-plugin-vue": "^7.12.1",
-    "fibers": "^5.0.0",
-    "husky": "^7.0.2",
-    "lint-staged": "^11.1.2",
-    "prettier": "^2.3.2",
-    "sass": "^1.36.0",
-    "sass-loader": "^10.1.1",
-    "stylelint": "^13.13.1",
-    "stylelint-config-prettier": "^8.0.2",
-    "stylelint-config-standard": "^22.0.0"
-  },
-  "keywords": [
-    "portfolio",
-    "portfolio-vue"
-  ]
+    "name": "portfolio",
+    "version": "1.0.0",
+    "license": "GPL-3.0",
+    "private": false,
+    "homepage": "https://github.com/Hougesen/portfolio#readme",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Hougesen/portfolio.git"
+    },
+    "author": {
+        "name": "Mads Hougesen",
+        "url": "https://mhouge.dk/",
+        "email": "mads@mhouge.dk"
+    },
+    "bugs": {
+        "url": "https://github.com/Hougesen/portfolio/issues"
+    },
+    "scripts": {
+        "dev": "nuxt",
+        "build": "nuxt build",
+        "start": "nuxt start",
+        "generate": "nuxt generate",
+        "prepare": "husky install",
+        "lint:ts": "eslint --ext \".js,.ts,.vue\" --ignore-path .gitignore .",
+        "lint:ts-fix": "eslint --fix --ext \".js,.ts,.vue\" --ignore-path .gitignore .",
+        "lint:style": "stylelint \"**/*.{vue,css,scss}\" --ignore-path .gitignore",
+        "lint:style-fix": "stylelint --fix \"**/*.{vue,css,scss}\" --ignore-path .gitignore",
+        "lint-all": "npm run lint:ts && npm run lint:style",
+        "lint-fix": "npm run lint:ts-fix && npm run lint:style-fix",
+        "format": "prettier --write .",
+        "pre-commit": "npm run lint-fix && npm run format"
+    },
+    "dependencies": {
+        "@nuxt/content": "^1.14.0",
+        "@nuxtjs/dotenv": "^1.4.1",
+        "@nuxtjs/sitemap": "^2.4.0",
+        "axios": "^0.21.1",
+        "core-js": "^3.15.1",
+        "nuxt": "^2.15.7"
+    },
+    "devDependencies": {
+        "@babel/eslint-parser": "^7.14.7",
+        "@nuxt/types": "^2.15.7",
+        "@nuxt/typescript-build": "^2.1.0",
+        "@nuxtjs/eslint-config-typescript": "^6.0.1",
+        "@nuxtjs/eslint-module": "^3.0.2",
+        "@nuxtjs/google-analytics": "^2.4.0",
+        "@nuxtjs/stylelint-module": "^4.0.0",
+        "@types/core-js": "^2.5.5",
+        "@types/eslint": "^8.4.1",
+        "@types/fibers": "^3.1.1",
+        "@types/prettier": "^2.6.0",
+        "@types/stylelint": "^13.13.3",
+        "eslint": "^7.32.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-nuxt": "^2.0.0",
+        "eslint-plugin-vue": "^7.12.1",
+        "fibers": "^5.0.0",
+        "husky": "^7.0.2",
+        "lint-staged": "^11.1.2",
+        "prettier": "^2.3.2",
+        "sass": "^1.36.0",
+        "sass-loader": "^10.1.1",
+        "stylelint": "^13.13.1",
+        "stylelint-config-prettier": "^8.0.2",
+        "stylelint-config-standard": "^22.0.0"
+    },
+    "keywords": [
+        "portfolio",
+        "portfolio-vue"
+    ]
 }

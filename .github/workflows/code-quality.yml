@@ -1,52 +1,52 @@
 name: code-quality
 
 on:
-  push:
-    branches:
-      - master
+    push:
+        branches:
+            - master
 
 jobs:
-  code-quality:
-    runs-on: ${{ matrix.os }}
+    code-quality:
+        runs-on: ${{ matrix.os }}
 
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-        node: [15]
+        strategy:
+            matrix:
+                os: [ubuntu-latest]
+                node: [15]
 
-    steps:
-      - name: Checkout 🛎
-        uses: actions/checkout@master
+        steps:
+            - name: Checkout 🛎
+              uses: actions/checkout@master
 
-      - name: Setup node env 🏗
-        uses: actions/setup-node@v2.1.2
-        with:
-          node-version: ${{ matrix.node }}
-          check-latest: true
+            - name: Setup node env 🏗
+              uses: actions/setup-node@v2.1.2
+              with:
+                  node-version: ${{ matrix.node }}
+                  check-latest: true
 
-      - name: Cache node_modules 📦
-        uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+            - name: Cache node_modules 📦
+              uses: actions/cache@v2
+              with:
+                  path: ~/.npm
+                  key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+                  restore-keys: |
+                      ${{ runner.os }}-node-
 
-      - name: Install dependencies 👨🏻‍💻
-        run: npm ci
+            - name: Install dependencies 👨🏻‍💻
+              run: npm install
 
-      - name: Update browserslist 🌐
-        run: npx browserslist@latest --update-db
+            - name: Update browserslist 🌐
+              run: npx browserslist@latest --update-db
 
-      - name: Run lint:ts-fix 👀
-        run: npm run lint:ts-fix
+            - name: Run lint:ts-fix 👀
+              run: npm run lint:ts-fix
 
-      - name: Run lint:style-fix
-        run: npm run lint:style-fix
+            - name: Run lint:style-fix
+              run: npm run lint:style-fix
 
-      - name: Run format 💎
-        run: npm run format
+            - name: Run format 💎
+              run: npm run format
 
-      - uses: EndBug/add-and-commit@v7
-        with:
-          message: 'Code quality fixes from code-quality.yml'
+            - uses: EndBug/add-and-commit@v7
+              with:
+                  message: 'Code quality fixes from code-quality.yml'
